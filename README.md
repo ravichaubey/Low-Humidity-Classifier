@@ -52,10 +52,13 @@ The third split is based on the variable avg_wind_direction_9am. Samples with av
 With the left child node, we have now reached a leaf node! Traversing from the root node to this leaf node, we can now see how a sample is classified as humidity_low:
 
 If air_pressure_9am > 919.4 and
+
 If air_temp_9am > 55.571 and
+
 If avg_wind_direction_9am <= 169.7
+
 Then sample is classified as humidity_low
-This translates to days with high air pressure and warmer temperatures, with wind direction from the east are likely to be days with low relative humidity.
+`This translates to days with high air pressure and warmer temperatures, with wind direction from the east are likely to be days with low relative humidity.`
 
 We have discussed above that low humidity is more likely to occur on sunny days with high air pressure and warmer temperatures. Now let’s consider wind direction. Values for wind direction start at 0 degree for due North, and increases clockwise. So wind direction <= 169.7 means that the wind is from an eastern direction. For San Diego, this means warmer, drier air from the inland areas as opposed to cooler air with more moisture from the ocean. So this relationship between winds from the east and days with low humidity makes sense.
 
@@ -64,20 +67,28 @@ Expanding the right child node with avg_wind_direction_9am > 169.7, we get:
 For the left leaf node, we see the following rules:
 
 If air_pressure_9am > 919.4 and
+
 If air_temp_9am > 55.571 and
+
 If avg_wind_direction_9am > 169.7 and
+
 If air_temp_9am <= 64.607
+
 Then sample is classified as humidity_not_low
-This translates to the following: Days with high air pressure, winds from the west, and temperatures between 56 and 65 degrees Fahrenheit are likely to be days with normal or high relative humidity.
+`This translates to the following: Days with high air pressure, winds from the west, and temperatures between 56 and 65 degrees Fahrenheit are likely to be days with normal or high relative humidity.`
 
 For the right leaf node, we get:
 
 If air_pressure_9am > 919.4 and
+
 If air_temp_9am > 55.571 and
+
 If avg_wind_direction_9am > 169.7 and
+
 If air_temp_9am > 64.607
+
 Then sample is classified as humidity_low
-This translates to: Days with high air pressure, winds from the west, and temperatures greater than 65 degrees Fahrenheit are likely to be days with low humidity.
+`This translates to: Days with high air pressure, winds from the west, and temperatures greater than 65 degrees Fahrenheit are likely to be days with low humidity.`
 
 This branch is now complete. There are three leaf nodes, so there are three ways to assign a prediction of either humidity_low or humidity_not_low to each sample that is sent down this branch of the tree.
 
