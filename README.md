@@ -15,3 +15,10 @@ Now that we have explored the data and looked at how to handle missing values, t
 
 `First Look at the Tree Structure given below, I am going to interpret from that structure only. Look Carefully :) `
 
+1. Tree Structure : Please not red color means low humidity days. Also note that i am only expanding low humidity days.
+
+![](https://1.bp.blogspot.com/-mlhqJJCUr3o/X1JrN-khxtI/AAAAAAAAU0U/z1790VIGY5c3UoUGR9ea1t8bIgeMq37BgCLcBGAsYHQ/w936-h976/tree.png)
+
+2. Simple Tree Structure : Please not red color means low humidity days. Also note that i am only expanding low humidity days.
+
+![](https://1.bp.blogspot.com/-BZz9e1rDxJY/X1JshRjXJyI/AAAAAAAAU0k/s4mp5TfWOKERUjcKuirBUmhlughhIZQZwCLcBGAsYHQ/w781-h455/tree%2Bsimple.png)
